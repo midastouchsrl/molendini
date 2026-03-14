@@ -248,19 +248,40 @@ function Navigation() {
 /* ─── Hero ─── */
 function Hero() {
   const [loaded, setLoaded] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    { src: '/images/hero-new.jpg', alt: 'Piatto di pesce con calice di vino bianco' },
+    { src: '/images/hero-2.jpg', alt: 'Polpo su piatto in terracotta' },
+    { src: '/images/hero-3.jpg', alt: 'Piatto di pesce con bottiglia di vino' },
+    { src: '/images/hero-4.jpg', alt: 'Sfera al cioccolato con pistacchio' },
+  ];
+
   useEffect(() => { setLoaded(true); }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % slides.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [slides.length]);
 
   return (
     <section id="home" className="relative h-screen min-h-[600px] md:min-h-[700px] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        <Image
-          src="/images/hero-new.jpg"
-          alt="Piatto gourmet con calice di vino - Molendini al Borgo"
-          fill
-          className="object-cover blur-[0.5px]"
-          priority
-          sizes="100vw"
-        />
+        {slides.map((slide, i) => (
+          <Image
+            key={slide.src}
+            src={slide.src}
+            alt={slide.alt}
+            fill
+            className={`object-cover blur-[0.5px] transition-opacity duration-[2000ms] ease-in-out ${
+              i === currentSlide ? 'opacity-100' : 'opacity-0'
+            }`}
+            priority={i === 0}
+            sizes="100vw"
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/45 to-black/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
       </div>
@@ -337,11 +358,13 @@ function Storia() {
   }, []);
 
   return (
-    <section id="storia" className="py-20 md:py-40 bg-[var(--cream)] grain-overlay">
-      <div className="max-w-7xl mx-auto px-5 md:px-8">
+    <section id="storia" className="py-20 md:py-40 bg-[var(--tortora)] relative overflow-hidden">
+      {/* Subtle texture on terracotta */}
+      <div className="absolute inset-0 opacity-[0.04]" style={{backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")"}} />
+      <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
         <div ref={ref} className="grid lg:grid-cols-2 gap-10 lg:gap-24 items-center">
           <div className={`relative transition-all duration-1000 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
-            <div className="relative aspect-[4/3] lg:aspect-[3/4] overflow-hidden">
+            <div className="relative aspect-[4/3] lg:aspect-[3/4] overflow-hidden shadow-2xl">
               <Image
                 src="/images/storia-ravioli.jpg"
                 alt="Ravioli fatti a mano - cucina d'autore"
@@ -350,21 +373,21 @@ function Storia() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-            <div className="hidden md:block absolute -bottom-3 -right-3 w-full h-full border border-[var(--tortora)]/20 -z-10" />
+            <div className="hidden md:block absolute -bottom-3 -right-3 w-full h-full border border-white/15 -z-10" />
           </div>
 
           <div className={`transition-all duration-1000 delay-200 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
-            <span className="text-[var(--tortora)] text-[0.65rem] md:text-[0.68rem] tracking-[0.3em] uppercase">La Nostra Storia</span>
-            <h2 className="font-['Cormorant_Garamond'] text-[var(--charcoal)] mt-4 md:mt-5 mb-3 md:mb-4">
+            <span className="text-[var(--champagne-light)] text-[0.65rem] md:text-[0.68rem] tracking-[0.3em] uppercase">La Nostra Storia</span>
+            <h2 className="font-['Cormorant_Garamond'] text-white mt-4 md:mt-5 mb-3 md:mb-4">
               <span className="block text-3xl md:text-5xl">Dove la Tradizione</span>
-              <span className="block text-3xl md:text-5xl text-[var(--tortora)] italic mt-1">Incontra la Novit&agrave;</span>
+              <span className="block text-3xl md:text-5xl text-[var(--champagne-light)] italic mt-1">Incontra la Novit&agrave;</span>
             </h2>
-            <div className="w-12 h-px bg-[var(--tortora)] mt-6 md:mt-8 mb-6 md:mb-8" />
-            <p className="text-[var(--charcoal)]/55 text-[0.9rem] md:text-[0.95rem] leading-[1.85] mb-4 md:mb-5">
+            <div className="w-12 h-px bg-[var(--champagne)] mt-6 md:mt-8 mb-6 md:mb-8" />
+            <p className="text-white/70 text-[0.9rem] md:text-[0.95rem] leading-[1.85] mb-4 md:mb-5">
               Nel cuore del Centro Storico di Cerveteri c&apos;&egrave; un posto in cui la novit&agrave; incontra la tradizione.
               L&apos;arte e il sapore si fondono in ogni piatto che serviamo.
             </p>
-            <p className="text-[var(--charcoal)]/55 text-[0.9rem] md:text-[0.95rem] leading-[1.85] mb-8 md:mb-10">
+            <p className="text-white/70 text-[0.9rem] md:text-[0.95rem] leading-[1.85] mb-8 md:mb-10">
               Gli antichi che abitavano la nostra terra erano maestri del gusto, e noi portiamo avanti
               questa eredit&agrave; con passione, utilizzando ingredienti freschi e ricette che raccontano
               la nostra terra.
@@ -373,7 +396,7 @@ function Storia() {
               href="https://www.thefork.it/ristorante/molendini-al-borgo-r672985#booking="
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline-dark"
+              className="inline-block border border-white/40 text-white/90 px-8 py-3 text-[0.75rem] tracking-[3px] uppercase hover:bg-white/10 hover:border-white/70 transition-all duration-300 min-h-[48px]"
             >
               Prenota un Tavolo
             </a>
@@ -384,14 +407,33 @@ function Storia() {
   );
 }
 
-/* ─── Philosophy Quote ─── */
+/* ─── Philosophy Quote with Parallax ─── */
 function Philosophy() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [parallaxY, setParallaxY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        const windowH = window.innerHeight;
+        if (rect.top < windowH && rect.bottom > 0) {
+          const progress = (windowH - rect.top) / (windowH + rect.height);
+          setParallaxY((progress - 0.5) * 80);
+        }
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <section className="relative min-h-[45vh] md:min-h-[55vh] flex items-center justify-center overflow-hidden py-16">
-      <div className="absolute inset-0">
+    <section ref={sectionRef} className="relative min-h-[45vh] md:min-h-[55vh] flex items-center justify-center overflow-hidden py-16">
+      <div className="absolute inset-[-40px]" style={{ transform: `translateY(${parallaxY}px)`, willChange: 'transform' }}>
         <Image src="/images/philosophy-bg.jpg" alt="Gnocchi con verdure e vino nella sala del ristorante" fill className="object-cover blur-[2px]" sizes="100vw" />
-        <div className="absolute inset-0 bg-black/55" />
       </div>
+      <div className="absolute inset-0 bg-black/55" />
       <div className="relative z-10 text-center px-6 md:px-8 max-w-2xl md:max-w-3xl">
         <p className="font-['Cormorant_Garamond'] text-white text-xl md:text-3xl lg:text-[2.2rem] italic font-light leading-relaxed">
           &ldquo;Gli antichi che abitavano la nostra terra erano maestri del gusto.
