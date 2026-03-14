@@ -343,8 +343,8 @@ function Storia() {
           <div className={`relative transition-all duration-1000 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <div className="relative aspect-[4/3] lg:aspect-[3/4] overflow-hidden">
               <Image
-                src="/images/interior-3.jpg"
-                alt="Interno ristorante - archi in pietra e cantina vini"
+                src="/images/storia-ravioli.jpg"
+                alt="Ravioli fatti a mano - cucina d'autore"
                 fill
                 className="object-cover image-hover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

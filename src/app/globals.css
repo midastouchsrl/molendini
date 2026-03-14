@@ -2,9 +2,10 @@
 @import "tailwindcss";
 
 :root {
-  --tortora: #B5A898;
-  --tortora-light: #CFC5B8;
-  --tortora-dark: #8A7E70;
+  /* Terracotta + Champagne — Italian Character */
+  --tortora: #A0674B;
+  --tortora-light: #C08A6E;
+  --tortora-dark: #7D4F38;
   --champagne: #C9A96E;
   --champagne-light: #DBCAA0;
   --cream: #F8F4EF;
@@ -101,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary:hover {
   background: var(--tortora-dark);
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(181, 168, 152, 0.3);
+  box-shadow: 0 8px 24px rgba(160, 103, 75, 0.3);
 }
 @media (hover: none) {
   .btn-primary:hover { transform: none; box-shadow: none; }
