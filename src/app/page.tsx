@@ -208,9 +208,12 @@ function Navigation() {
       </div>
 
       {/* Mobile Menu - fullscreen overlay */}
-      <div className={`lg:hidden fixed inset-0 top-0 bg-[var(--cream)] transition-all duration-500 z-40 ${
-        menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
-      }`}>
+      <div
+        className={`lg:hidden fixed inset-0 transition-all duration-500 z-[60] ${
+          menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+        }`}
+        style={{ backgroundColor: '#F8F4EF' }}
+      >
         <div className="flex flex-col items-center justify-center h-full gap-6">
           {navLinks.map((link) => (
             <a
