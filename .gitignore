@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# source images (not needed in deploy)
+/Immagini
+
+# playwright mcp logs
+.playwright-mcp/
+
+# claude memory (local only)
+.claude/
+
+# screenshots
+*.png
+!public/**/*.png
