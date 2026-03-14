@@ -216,12 +216,10 @@ function Navigation() {
           backgroundColor: '#F8F4EF',
           top: 0,
           left: 0,
-          right: 0,
-          bottom: 0,
           width: '100vw',
-          height: '100vh',
           height: '100dvh',
-        } as React.CSSProperties}
+          minHeight: '100vh',
+        }}
       >
         <div className="flex flex-col items-center justify-center h-full gap-6">
           {navLinks.map((link) => (
