@@ -389,7 +389,7 @@ function Philosophy() {
   return (
     <section className="relative min-h-[45vh] md:min-h-[55vh] flex items-center justify-center overflow-hidden py-16">
       <div className="absolute inset-0">
-        <Image src="/images/interior-5.jpg" alt="Sala ristorante con archi in pietra" fill className="object-cover" sizes="100vw" />
+        <Image src="/images/philosophy-bg.jpg" alt="Gnocchi con verdure e vino nella sala del ristorante" fill className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-black/55" />
       </div>
       <div className="relative z-10 text-center px-6 md:px-8 max-w-2xl md:max-w-3xl">
