@@ -358,13 +358,11 @@ function Storia() {
   }, []);
 
   return (
-    <section id="storia" className="py-20 md:py-40 bg-[var(--tortora)] relative overflow-hidden">
-      {/* Subtle texture on terracotta */}
-      <div className="absolute inset-0 opacity-[0.04]" style={{backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")"}} />
-      <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
+    <section id="storia" className="py-20 md:py-40 bg-[var(--cream)] grain-overlay">
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
         <div ref={ref} className="grid lg:grid-cols-2 gap-10 lg:gap-24 items-center">
           <div className={`relative transition-all duration-1000 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
-            <div className="relative aspect-[4/3] lg:aspect-[3/4] overflow-hidden shadow-2xl">
+            <div className="relative aspect-[4/3] lg:aspect-[3/4] overflow-hidden">
               <Image
                 src="/images/storia-ravioli.jpg"
                 alt="Ravioli fatti a mano - cucina d'autore"
@@ -373,21 +371,21 @@ function Storia() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-            <div className="hidden md:block absolute -bottom-3 -right-3 w-full h-full border border-white/15 -z-10" />
+            <div className="hidden md:block absolute -bottom-3 -right-3 w-full h-full border border-[var(--tortora)]/20 -z-10" />
           </div>
 
           <div className={`transition-all duration-1000 delay-200 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
-            <span className="text-[var(--champagne-light)] text-[0.65rem] md:text-[0.68rem] tracking-[0.3em] uppercase">La Nostra Storia</span>
-            <h2 className="font-['Cormorant_Garamond'] text-white mt-4 md:mt-5 mb-3 md:mb-4">
+            <span className="text-[var(--tortora)] text-[0.65rem] md:text-[0.68rem] tracking-[0.3em] uppercase">La Nostra Storia</span>
+            <h2 className="font-['Cormorant_Garamond'] text-[var(--charcoal)] mt-4 md:mt-5 mb-3 md:mb-4">
               <span className="block text-3xl md:text-5xl">Dove la Tradizione</span>
-              <span className="block text-3xl md:text-5xl text-[var(--champagne-light)] italic mt-1">Incontra la Novit&agrave;</span>
+              <span className="block text-3xl md:text-5xl text-[var(--tortora)] italic mt-1">Incontra la Novit&agrave;</span>
             </h2>
-            <div className="w-12 h-px bg-[var(--champagne)] mt-6 md:mt-8 mb-6 md:mb-8" />
-            <p className="text-white/70 text-[0.9rem] md:text-[0.95rem] leading-[1.85] mb-4 md:mb-5">
+            <div className="w-12 h-px bg-[var(--tortora)] mt-6 md:mt-8 mb-6 md:mb-8" />
+            <p className="text-[var(--charcoal)]/55 text-[0.9rem] md:text-[0.95rem] leading-[1.85] mb-4 md:mb-5">
               Nel cuore del Centro Storico di Cerveteri c&apos;&egrave; un posto in cui la novit&agrave; incontra la tradizione.
               L&apos;arte e il sapore si fondono in ogni piatto che serviamo.
             </p>
-            <p className="text-white/70 text-[0.9rem] md:text-[0.95rem] leading-[1.85] mb-8 md:mb-10">
+            <p className="text-[var(--charcoal)]/55 text-[0.9rem] md:text-[0.95rem] leading-[1.85] mb-8 md:mb-10">
               Gli antichi che abitavano la nostra terra erano maestri del gusto, e noi portiamo avanti
               questa eredit&agrave; con passione, utilizzando ingredienti freschi e ricette che raccontano
               la nostra terra.
@@ -396,7 +394,7 @@ function Storia() {
               href="https://www.thefork.it/ristorante/molendini-al-borgo-r672985#booking="
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block border border-white/40 text-white/90 px-8 py-3 text-[0.75rem] tracking-[3px] uppercase hover:bg-white/10 hover:border-white/70 transition-all duration-300 min-h-[48px]"
+              className="btn-outline-dark"
             >
               Prenota un Tavolo
             </a>
@@ -623,14 +621,16 @@ function Recensioni() {
   ];
 
   return (
-    <section id="recensioni" className="py-20 md:py-40 bg-[var(--cream-dark)] grain-overlay">
+    <section id="recensioni" className="py-20 md:py-40 bg-[var(--tortora)] relative overflow-hidden">
+      {/* Subtle texture */}
+      <div className="absolute inset-0 opacity-[0.04]" style={{backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")"}} />
       <div ref={ref} className="max-w-6xl mx-auto px-5 md:px-8 relative z-10">
         <div className={`text-center mb-12 md:mb-20 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <span className="text-[var(--tortora)] text-[0.65rem] md:text-[0.68rem] tracking-[0.3em] uppercase">Cosa Dicono di Noi</span>
-          <h2 className="font-['Cormorant_Garamond'] text-3xl md:text-5xl text-[var(--charcoal)] mt-4 md:mt-5 mb-6 md:mb-8">
+          <span className="text-[var(--champagne-light)] text-[0.65rem] md:text-[0.68rem] tracking-[0.3em] uppercase">Cosa Dicono di Noi</span>
+          <h2 className="font-['Cormorant_Garamond'] text-3xl md:text-5xl text-white mt-4 md:mt-5 mb-6 md:mb-8">
             Le Vostre Recensioni
           </h2>
-          <div className="accent-line-tortora w-14 md:w-16 mx-auto mb-6 md:mb-8" />
+          <div className="accent-line w-14 md:w-16 mx-auto mb-6 md:mb-8" />
           <div className="flex items-center justify-center gap-3">
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
@@ -639,8 +639,8 @@ function Recensioni() {
                 </svg>
               ))}
             </div>
-            <span className="text-[var(--charcoal)]/70 text-sm font-medium">4.8 / 5</span>
-            <span className="text-[var(--charcoal)]/40 text-sm">su Google</span>
+            <span className="text-white/80 text-sm font-medium">4.8 / 5</span>
+            <span className="text-white/50 text-sm">su Google</span>
           </div>
         </div>
 
@@ -648,8 +648,8 @@ function Recensioni() {
           visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           {reviews.map((review, i) => (
-            <div key={i} className="bg-[var(--cream)] p-6 md:p-10 relative group hover:shadow-md transition-all duration-500">
-              <div className="absolute top-4 md:top-6 right-6 md:right-8 text-[var(--tortora)]/10 text-5xl md:text-6xl font-['Cormorant_Garamond'] leading-none select-none">&rdquo;</div>
+            <div key={i} className="bg-white/10 backdrop-blur-sm p-6 md:p-10 relative group hover:bg-white/15 transition-all duration-500">
+              <div className="absolute top-4 md:top-6 right-6 md:right-8 text-white/8 text-5xl md:text-6xl font-['Cormorant_Garamond'] leading-none select-none">&rdquo;</div>
               <div className="flex gap-0.5 mb-4 md:mb-5">
                 {[...Array(5)].map((_, j) => (
                   <svg key={j} className="w-3 h-3 text-[var(--champagne)]" fill="currentColor" viewBox="0 0 20 20">
@@ -657,13 +657,13 @@ function Recensioni() {
                   </svg>
                 ))}
               </div>
-              <p className="text-[var(--charcoal)]/55 text-[0.88rem] md:text-[0.95rem] leading-[1.85] mb-6 md:mb-8 relative z-10">{review.text}</p>
+              <p className="text-white/75 text-[0.88rem] md:text-[0.95rem] leading-[1.85] mb-6 md:mb-8 relative z-10">{review.text}</p>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-[var(--charcoal)]/80 text-sm font-medium">{review.name}</p>
-                  <p className="text-[0.65rem] md:text-[0.7rem] text-[var(--charcoal)]/35 mt-0.5">{review.date}</p>
+                  <p className="text-white/90 text-sm font-medium">{review.name}</p>
+                  <p className="text-[0.65rem] md:text-[0.7rem] text-white/40 mt-0.5">{review.date}</p>
                 </div>
-                <div className="flex items-center gap-1.5 text-[var(--charcoal)]/25">
+                <div className="flex items-center gap-1.5 text-white/30">
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                     <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -682,7 +682,7 @@ function Recensioni() {
             href="https://www.google.com/maps/search/Molendini+al+Borgo+Via+Antonio+Ricci+9+00052+Cerveteri/"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-outline-dark"
+            className="inline-block border border-white/40 text-white/90 px-8 py-3 text-[0.75rem] tracking-[3px] uppercase hover:bg-white/10 hover:border-white/70 transition-all duration-300 min-h-[48px]"
           >
             Leggi tutte le recensioni
           </a>
