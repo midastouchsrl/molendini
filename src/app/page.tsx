@@ -495,11 +495,14 @@ function Gallery() {
   };
 
   const images = [
-    { src: '/images/interior-2.jpg', alt: 'La sala con lampade in rame' },
+    { src: '/images/dish-arancini.jpg', alt: 'Arancini con crema e alghe croccanti' },
     { src: '/images/dish-dessert.jpg', alt: 'Sfera al cioccolato con pistacchio' },
     { src: '/images/interior-4.jpg', alt: 'Vista sulla cantina dei vini' },
+    { src: '/images/dish-spaghetti.jpg', alt: 'Spaghetti con fiori di zucca e calamari' },
     { src: '/images/dish-seafood.jpg', alt: 'Piatto di pesce con vino bianco' },
+    { src: '/images/dish-millefoglie.jpg', alt: 'Millefoglie di polpo con vino rosso' },
     { src: '/images/dish-pasta-funghi.jpg', alt: 'Pasta fresca con funghi e timo' },
+    { src: '/images/dish-pizza.jpg', alt: 'Pizza con peperoni, olive e capperi' },
     { src: '/images/dish-ravioli.jpg', alt: 'Ravioli con carciofi e gamberi' },
     { src: '/images/dish-meat.jpg', alt: 'Filetto glassato con rosmarino' },
     { src: '/images/dish-pasta-mare.jpg', alt: 'Pasta ai frutti di mare' },
