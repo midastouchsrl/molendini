@@ -209,10 +209,19 @@ function Navigation() {
 
       {/* Mobile Menu - fullscreen overlay */}
       <div
-        className={`lg:hidden fixed inset-0 transition-all duration-500 z-[60] ${
-          menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+        className={`lg:hidden fixed z-[60] transition-transform duration-500 ease-in-out ${
+          menuOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
-        style={{ backgroundColor: '#F8F4EF' }}
+        style={{
+          backgroundColor: '#F8F4EF',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          width: '100vw',
+          height: '100vh',
+          height: '100dvh',
+        } as React.CSSProperties}
       >
         <div className="flex flex-col items-center justify-center h-full gap-6">
           {navLinks.map((link) => (
