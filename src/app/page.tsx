@@ -387,18 +387,22 @@ function Storia() {
           <div className={`transition-all duration-1000 delay-200 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
             <span className="text-[var(--tortora)] text-[0.65rem] md:text-[0.68rem] tracking-[0.3em] uppercase">La Nostra Storia</span>
             <h2 className="font-['Cormorant_Garamond'] text-[var(--charcoal)] mt-4 md:mt-5 mb-3 md:mb-4">
-              <span className="block text-3xl md:text-5xl">Dove la Tradizione</span>
-              <span className="block text-3xl md:text-5xl text-[var(--tortora)] italic mt-1">Incontra la Novit&agrave;</span>
+              <span className="block text-3xl md:text-5xl">Da questa Terra</span>
+              <span className="block text-3xl md:text-5xl text-[var(--tortora)] italic mt-1">Nasce il Gusto</span>
             </h2>
             <div className="w-12 h-px bg-[var(--tortora)] mt-6 md:mt-8 mb-6 md:mb-8" />
             <p className="text-[var(--charcoal)]/55 text-[0.9rem] md:text-[0.95rem] leading-[1.85] mb-4 md:mb-5">
-              Nel cuore del Centro Storico di Cerveteri c&apos;&egrave; un posto in cui la novit&agrave; incontra la tradizione.
-              L&apos;arte e il sapore si fondono in ogni piatto che serviamo.
+              Nel cuore del centro storico di Cerveteri nasce Molendini al Borgo, un luogo dove la cucina racconta l&apos;incontro naturale tra terra e mare, tra tradizione e ricerca.
+            </p>
+            <p className="text-[var(--charcoal)]/55 text-[0.9rem] md:text-[0.95rem] leading-[1.85] mb-4 md:mb-5">
+              In una terra millenaria, segnata dalla storia degli Etruschi e dalla ricchezza del territorio laziale, la nostra cucina prende forma attraverso ingredienti stagionali, prodotti locali e ricette che rispettano l&apos;identit&agrave; della nostra terra e la freschezza del mare.
+            </p>
+            <p className="text-[var(--charcoal)]/55 text-[0.9rem] md:text-[0.95rem] leading-[1.85] mb-4 md:mb-5">
+              Accanto alla cucina, la pizza rappresenta una parte centrale della nostra identit&agrave;.
+              Un lavoro attento che parte dalla selezione delle farine, prosegue nei lunghi tempi di maturazione degli impasti e arriva fino alla ricerca dell&apos;equilibrio perfetto tra leggerezza, digeribilit&agrave; e gusto.
             </p>
             <p className="text-[var(--charcoal)]/55 text-[0.9rem] md:text-[0.95rem] leading-[1.85] mb-8 md:mb-10">
-              Gli antichi che abitavano la nostra terra erano maestri del gusto, e noi portiamo avanti
-              questa eredit&agrave; con passione, utilizzando ingredienti freschi e ricette che raccontano
-              la nostra terra.
+              Molendini &egrave; questo: l&apos;incontro tra terra e mare, tra tradizione e ricerca, nel cuore antico di Cerveteri.
             </p>
             <a
               href="https://www.thefork.it/ristorante/molendini-al-borgo-r672985#booking="
